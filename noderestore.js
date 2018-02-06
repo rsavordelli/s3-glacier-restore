@@ -13,13 +13,15 @@ var nextreq = Date.now();
 // command line parameters
 var bucket = process.argv[2];
 var days   = process.argv[3];
-var fbph   = process.argv[4];
-var nbph   = process.argv[5];
+var fbph   = '500000';
+//var fbph   = process.argv[4];
+var nbph   = '500000';
+//var nbph   = process.argv[5];
 var restoretype   = process.argv[6];
 var prefix = process.argv[7];
 var marker = process.argv[8];
 
-console.assert(bucket && days > 0 && fbph > 5000000 && nbph >= fbph, 'Syntax: node %s <bucket> <days> <MB/firsth> <MB/nexth> <restoretype(Standard | Bulk | Expedited)> [<prefix> [<marker>]]', process.argv[1]);
+//console.assert(bucket && days > 0 && fbph > 5000000 && nbph >= fbph, 'Syntax: node %s <bucket> <days> <MB/firsth> <MB/nexth> <restoretype(Standard | Bulk | Expedited)> [<prefix> [<marker>]]', process.argv[1]);
 
 var AWS = require('aws-sdk');
 AWS.config.region = 'us-east-1'; // any valid region will do as S3 is region-agnostic
